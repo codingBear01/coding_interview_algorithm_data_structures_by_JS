@@ -9,9 +9,16 @@
 //   reverseInt(-90) === -9
 
 function reverseInt(n) {
-  const reversed = n.toString().split("").reverse().join("");
+  let reversed = String(n).split("").reverse();
 
-  return parseInt(reversed) * Math.sign(n);
+  if (reversed[reversed.length - 1] === "-") {
+    reversed.pop();
+    reversed = reversed.join("");
+    return Number(reversed) - Number(reversed) * 2;
+  } else {
+    reversed = reversed.join("");
+    return Number(reversed);
+  }
 }
 console.log(reverseInt(15));
 console.log(reverseInt(-15));
