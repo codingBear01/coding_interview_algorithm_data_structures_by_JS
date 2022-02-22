@@ -20,6 +20,7 @@ function reverseInt(n) {
     return Number(reversed);
   }
 }
+
 console.log(reverseInt(15));
 console.log(reverseInt(-15));
 
