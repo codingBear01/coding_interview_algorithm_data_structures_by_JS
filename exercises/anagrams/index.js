@@ -32,7 +32,19 @@ console.log(anagrams("RAIL! SAFETY!", "fairy tales"));
 // console 창에는 false라고 뜨는데 test는 통과임...ㅇㅅaㅇ 뭐징...
 */
 
-/* solution 2. with RegExp
+/* solution 2. simpler ver. with RegExp
+function anagrams(stringA, stringB) {
+  return cleanString(stringA) === cleanString(stringB);
+}
+
+function cleanString(str) {
+  return str.replace(/[\W]/g, "").toLowerCase().split("").sort().join("");
+}
+
+console.log(anagrams("RAIL! SAFETY!", "fairy tales"));
+ */
+
+/* solution 3. with for...in & if & RegExp
 function anagrams(stringA, stringB) {
   const aCharMap = buildCharMap(stringA);
   const bCharMap = buildCharMap(stringB);
