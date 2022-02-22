@@ -10,12 +10,15 @@
 
 function chunk(array, size) {
   const chunked = [];
-  let index = 0;
 
-  while (index < array.length) {
-    chunked.push(array.slice(index, index + size));
+  for (let element of array) {
+    const last = chunked[chunked.length - 1];
 
-    index += size;
+    if (!last || last.length === size) {
+      chunked.push([element]);
+    } else {
+      last.push(element);
+    }
   }
 
   return chunked;
@@ -28,6 +31,7 @@ module.exports = chunk;
 /* solution 1. my solution
 function chunk(array, size) {
   const resArr = [];
+
   for (let i = 0; i < array.length; ++i) {
     resArr.push(array.slice(size * i, size * (i + 1)));
   }
