@@ -8,7 +8,7 @@
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
 function capitalize(str) {
-  // 아래처럼 설정하지 않고 for문 돌면서 왼쪽이 공백일 시 result에 add하는 식으로 짜면 str의 첫째값은 대문자로 반환 안 됨. 따라서 미리 input의 첫째값을 대문자로 설정.
+  // 아래처럼 설정하지 않고 for문 돌면서 왼쪽이 공백일 시 result에 add하는 식으로 짜면 str의 첫째값은 탐색 대상에서 제외되기 때문에 대문자로 반환 안 됨. 따라서 미리 input의 첫째값을 대문자로 설정.
   let result = str[0].toUpperCase();
 
   for (let i = 1; i < str.length; ++i) {
