@@ -15,20 +15,18 @@
 //       '#####'
 
 function pyramid(n) {
-  const midpoint = Math.floor((2 * n - 1) / 2);
+  for (let stair = 1; stair <= n; ++stair) {
+    let res = "";
 
-  for (let row = 0; row < n; ++row) {
-    let level = "";
-
-    for (let column = 0; column < 2 * n - 1; ++column) {
-      if (midpoint - row <= column && midpoint + row >= column) {
-        level += "#";
-      } else {
-        level += " ";
-      }
+    for (let sharp = 1; sharp <= 2 * stair - 1; ++sharp) {
+      res += "#";
     }
 
-    console.log(level);
+    for (let space = 1; space <= n - stair; ++space) {
+      res = " " + res + " ";
+    }
+
+    console.log(res);
   }
 }
 
