@@ -43,6 +43,8 @@ function steps(n, row = 0, stair = "") {
 
 steps(5);
 
+module.exports = steps;
+
 /* steps of recursion function
   step.1
   1-1. steps(5, row = 0, stair = "#")
@@ -62,8 +64,6 @@ steps(5);
 
   step5까지 돌고 각 단계의 마지막 줄을 console.log로 stair 한 줄씩 출력.
 */
-
-module.exports = steps;
 
 /* solution 1. my solution
 function steps(n) {
@@ -99,6 +99,34 @@ function steps(n) {
 
     console.log(stair);
   }
+}
+
+steps(5);
+*/
+
+/* solution 3. recursive function
+function steps(n, row = 0, stair = "") {
+  // base case. it is the most important to set correct base case.
+  if (n === row) {
+    return;
+  }
+
+  if (n === stair.length) {
+    console.log(stair);
+    return steps(n, row + 1);
+  }
+
+  const add = stair.length <= row ? "#" : " ";
+
+  steps(n, row, stair + add);
+
+  //   if (stair.length <= row) {
+  //     stair += "#";
+  //   } else {
+  //     stair += " ";
+  //   }
+
+  //   steps(n, row, stair);
 }
 
 steps(5);
