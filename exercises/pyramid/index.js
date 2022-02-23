@@ -40,6 +40,7 @@ module.exports = pyramid;
 function pyramid(n) {
   for (let stair = 1; stair <= n; ++stair) {
     let res = "";
+    
     for (let sharp = 1; sharp <= 2 * stair - 1; ++sharp) {
       res += "#";
     }
