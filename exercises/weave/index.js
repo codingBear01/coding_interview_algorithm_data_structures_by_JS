@@ -22,8 +22,24 @@
 //    q.remove() // 2
 //    q.remove() // 'There'
 
-const Queue = require('./queue');
+const Queue = require("./queue");
 
-function weave(sourceOne, sourceTwo) {}
+function weave(sourceOne, sourceTwo) {
+  const q = new Queue();
+
+  // 새로운 q(third Queue)에 undefined값을 넣지 않기 위해, sourceOne 혹은 sourceTwo에서 peek 했을 때 값이 나온다면 while문으로 탐색
+  while (sourceOne.peek() || sourceTwo.peek()) {
+    // sourceOne.peek()이 값을 갖고 있다면(true), q에다 sourceOne.remove()한 값을 add.
+    if (sourceOne.peek()) {
+      q.add(sourceOne.remove());
+    }
+
+    if (sourceTwo.peek()) {
+      q.add(sourceTwo.remove());
+    }
+  }
+
+  return q;
+}
 
 module.exports = weave;

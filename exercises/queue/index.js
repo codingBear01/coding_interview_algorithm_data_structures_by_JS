@@ -22,10 +22,4 @@ class Queue {
   }
 }
 
-const q = new Queue();
-q.add(1);
-console.log(q);
-console.log(q.remove());
-console.log(q);
-
 module.exports = Queue;
