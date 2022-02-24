@@ -71,9 +71,10 @@ function matrix(n) {
     // 3-8. Increment start column
     startCol++;
   }
+
   return results;
 }
 
-console.log(matrix(2));
+console.log(matrix(3));
 
 module.exports = matrix;
